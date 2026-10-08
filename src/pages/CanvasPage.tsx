@@ -13,7 +13,7 @@ import { CommandPalette } from '../components/canvas/CommandPalette'; // Will cr
 
 const CanvasPage: React.FC = () => {
   const { nodePaletteOpen } = useUIStore();
-  const { currentWorkflow } = useWorkflowStore();
+
   
   // Use keyboard shortcuts
   useKeyboard();

@@ -221,7 +221,7 @@ const HistoryPage: React.FC = () => {
                           </div>
                         )}
                         
-                        {log.output && (
+                        {Boolean(log.output) && (
                           <div className="mt-2">
                             <div className="text-[10px] font-semibold uppercase tracking-wider mb-1" style={{ color: 'var(--color-text-tertiary)' }}>Output</div>
                             <pre className="p-2 rounded text-[11px] font-mono overflow-x-auto" style={{ backgroundColor: 'var(--color-bg-tertiary)', color: 'var(--color-text-secondary)' }}>

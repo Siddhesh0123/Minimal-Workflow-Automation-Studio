@@ -45,7 +45,7 @@ export const FlowCanvas: React.FC = () => {
     setSelectedNodeId,
   } = useWorkflowStore();
 
-  const onInit = useCallback((instance: ReactFlowInstance) => {
+  const onInit = useCallback((instance: any) => {
     reactFlowInstance.current = instance;
   }, []);
 
