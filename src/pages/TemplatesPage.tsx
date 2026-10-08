@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { LayoutTemplate, Play, ArrowRight, Loader2 } from 'lucide-react';
+import { LayoutTemplate, Play, Loader2 } from 'lucide-react';
 import { EmptyState } from '../components/ui/EmptyState';
 import { Button } from '../components/ui/Button';
 import { api } from '../lib/api';

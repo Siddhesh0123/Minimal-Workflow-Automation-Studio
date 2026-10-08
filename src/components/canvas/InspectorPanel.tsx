@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { X, Trash2 } from 'lucide-react';
 import { useWorkflowStore } from '../../stores/workflowStore';
 import { Input, Textarea, Select } from '../ui/Input';
-import { Button } from '../ui/Button';
+
 import type {
   FlowNodeData,
   ScheduleConfig,
@@ -373,7 +373,6 @@ const NodeConfigForm: React.FC<NodeConfigFormProps> = ({
               onChange({ ...c, expression: e.target.value })
             }
             placeholder="data.value > 0"
-            helpText="JS expression that returns true/false"
           />
           <Input
             label="Description"

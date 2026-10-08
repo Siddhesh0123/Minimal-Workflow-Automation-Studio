@@ -115,7 +115,7 @@ const HistoryPage: React.FC = () => {
                     </tr>
                   </thead>
                   <tbody>
-                    {runs.map((run, idx) => (
+                    {runs.map((run) => (
                       <tr 
                         key={run.id}
                         onClick={() => setSelectedRun(run)}

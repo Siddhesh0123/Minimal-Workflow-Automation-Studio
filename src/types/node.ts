@@ -69,7 +69,7 @@ export type NodeConfig =
 
 export type NodeStatus = 'idle' | 'running' | 'success' | 'failed';
 
-export interface FlowNodeData {
+export interface FlowNodeData extends Record<string, unknown> {
   label: string;
   category: NodeCategory;
   nodeType: FlowNodeType;

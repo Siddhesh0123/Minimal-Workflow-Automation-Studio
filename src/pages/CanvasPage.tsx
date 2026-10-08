@@ -1,6 +1,6 @@
 // Canvas page - main workflow editor
 
-import React, { useEffect } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
 import { Toolbar } from '../components/canvas/Toolbar';
 import { NodePalette } from '../components/canvas/NodePalette';
@@ -13,7 +13,7 @@ import { CommandPalette } from '../components/canvas/CommandPalette'; // Will cr
 
 const CanvasPage: React.FC = () => {
   const { nodePaletteOpen } = useUIStore();
-  const { currentWorkflow, nodes, setDirty } = useWorkflowStore();
+  const { currentWorkflow } = useWorkflowStore();
   
   // Use keyboard shortcuts
   useKeyboard();

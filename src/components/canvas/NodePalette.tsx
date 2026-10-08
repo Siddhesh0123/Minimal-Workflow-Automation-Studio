@@ -122,7 +122,7 @@ export const NodePalette: React.FC<NodePaletteProps> = ({ isOpen }) => {
                           transition={{ delay: idx * 0.05, duration: 0.2 }}
                           draggable
                           onDragStart={(e) =>
-                            onDragStart(e, nodeType as FlowNodeType)
+                            onDragStart(e as unknown as React.DragEvent, nodeType as FlowNodeType)
                           }
                           className="flex items-center gap-2 mx-2 px-2 py-1.5 rounded-[var(--radius-md)] cursor-grab active:cursor-grabbing transition-all duration-150 group"
                           style={{
