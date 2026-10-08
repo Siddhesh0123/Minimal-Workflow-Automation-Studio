@@ -1,0 +1,55 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+model Workflow {
+  id          String        @id @default(uuid())
+  name        String
+  description String?
+  nodes       String        // Storing React Flow nodes as JSON string
+  edges       String        // Storing React Flow edges as JSON string
+  isTemplate  Boolean       @default(false)
+  createdAt   DateTime      @default(now())
+  updatedAt   DateTime      @updatedAt
+  runs        WorkflowRun[]
+}
+
+model WorkflowRun {
+  id          String    @id @default(uuid())
+  workflowId  String
+  workflow    Workflow  @relation(fields: [workflowId], references: [id], onDelete: Cascade)
+  status      String    // pending | running | success | failed
+  startedAt   DateTime  @default(now())
+  finishedAt  DateTime?
+  duration    Int?      // ms
+  logs        NodeLog[]
+}
+
+model NodeLog {
+  id          String      @id @default(uuid())
+  runId       String
+  run         WorkflowRun @relation(fields: [runId], references: [id], onDelete: Cascade)
+  nodeId      String
+  nodeType    String
+  status      String      // idle | running | success | failed
+  input       String?     // JSON string
+  output      String?     // JSON string
+  error       String?
+  startedAt   DateTime
+  finishedAt  DateTime?
+  duration    Int?        // ms
+}
+
+model ScheduledJob {
+  id          String    @id @default(uuid())
+  workflowId  String
+  cronExpr    String
+  enabled     Boolean   @default(true)
+  lastRunAt   DateTime?
+  createdAt   DateTime  @default(now())
+}
