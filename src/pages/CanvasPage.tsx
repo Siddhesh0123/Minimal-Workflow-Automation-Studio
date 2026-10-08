@@ -7,7 +7,7 @@ import { NodePalette } from '../components/canvas/NodePalette';
 import { FlowCanvas } from '../components/canvas/FlowCanvas';
 import { InspectorPanel } from '../components/canvas/InspectorPanel';
 import { useUIStore } from '../stores/uiStore';
-import { useWorkflowStore } from '../stores/workflowStore';
+
 import { useKeyboard } from '../hooks/useKeyboard';
 import { CommandPalette } from '../components/canvas/CommandPalette'; // Will create next
 
